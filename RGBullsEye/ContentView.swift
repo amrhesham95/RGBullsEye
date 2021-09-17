@@ -26,8 +26,9 @@ struct ContentView: View {
                 
                 VStack {
                     Color(red: rTarget, green: gTarget, blue: bTarget)
-                    Text("Match this color")
-                        .padding()
+                    showAlert ? Text("R: \(Int(rTarget * 255.0))" + "  G: \(Int(gTarget * 255.0))"
++ "  B: \(Int(bTarget * 255.0))"): Text("Match this color")
+
                     
                 }
                 
@@ -35,9 +36,7 @@ struct ContentView: View {
                     Color(red: rGuess, green: gGuess, blue: bGuess)
                     Text("R: \(Int(rGuess * 255.0))"
                      + "  G: \(Int(gGuess * 255.0))"
-                     + "  B: \(Int(bGuess * 255.0))")
-                        .padding()
-                    
+                     + "  B: \(Int(bGuess * 255.0))")                    
                 }
 
             }
@@ -48,9 +47,12 @@ struct ContentView: View {
             }
             
             // <SliderView>
-            ColorSlider(value: $rGuess, textColor: .red)
-            ColorSlider(value: $gGuess, textColor: .green)
-            ColorSlider(value: $bGuess, textColor: .blue)
+            VStack {
+                ColorSlider(value: $rGuess, textColor: .red)
+                ColorSlider(value: $gGuess, textColor: .green)
+                ColorSlider(value: $bGuess, textColor: .blue)
+
+            }.padding(.horizontal)
             // <SliderView/>
             
         }.alert(isPresented: $showAlert, content: {
