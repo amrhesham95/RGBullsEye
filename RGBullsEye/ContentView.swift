@@ -18,6 +18,7 @@ struct ContentView: View {
     @State var gGuess: Double = Double.random(in: 0..<1)
     @State var bGuess: Double = Double.random(in: 0..<1)
     @State var showAlert = false
+    @ObservedObject var timer = TimeCounter()
     
     // MARK: - Body
     var body: some View {
@@ -32,16 +33,25 @@ struct ContentView: View {
                     
                 }
                 
-                VStack {
-                    Color(red: rGuess, green: gGuess, blue: bGuess)
-                    Text("R: \(Int(rGuess * 255.0))"
-                     + "  G: \(Int(gGuess * 255.0))"
-                     + "  B: \(Int(bGuess * 255.0))")                    
+                // Guess Color View
+                ZStack(alignment: .center) {
+                    VStack {
+                        Color(red: rGuess, green: gGuess, blue: bGuess)
+                        Text("R: \(Int(rGuess * 255.0))"
+                         + "  G: \(Int(gGuess * 255.0))"
+                         + "  B: \(Int(bGuess * 255.0))")
+                    }
+                    Text(String(timer.counter))
+                        .padding(.all, 5)
+                        .background(Color.white)
+                        .mask(Circle())
+                        .foregroundColor(.black)
                 }
 
             }
             Button(action: {
                 showAlert = true
+                timer.killTimer()
             }) {
                 Text("Hit Me!")
             }
