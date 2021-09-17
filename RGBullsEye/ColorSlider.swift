@@ -13,9 +13,7 @@ struct ColorSlider: View {
     var body: some View {
         HStack {
             Text("0").foregroundColor(textColor)
-            Slider(value: $value)
-                .background(textColor)
-                 .cornerRadius(10)
+            ColorUISlider(color: UIColor(textColor), value: $value)
             Text("255").foregroundColor(textColor)
         }
     }

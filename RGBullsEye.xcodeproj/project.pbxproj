@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EFC153F626F52B74007C0BE7 /* ColorUISlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC153F526F52B74007C0BE7 /* ColorUISlider.swift */; };
 		EFC7672526F4861C00CAF31F /* RGBullsEyeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC7672426F4861C00CAF31F /* RGBullsEyeApp.swift */; };
 		EFC7672726F4861C00CAF31F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC7672626F4861C00CAF31F /* ContentView.swift */; };
 		EFC7672926F4861D00CAF31F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFC7672826F4861D00CAF31F /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EFC153F526F52B74007C0BE7 /* ColorUISlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUISlider.swift; sourceTree = "<group>"; };
 		EFC7672126F4861C00CAF31F /* RGBullsEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RGBullsEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFC7672426F4861C00CAF31F /* RGBullsEyeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBullsEyeApp.swift; sourceTree = "<group>"; };
 		EFC7672626F4861C00CAF31F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				EFC7672426F4861C00CAF31F /* RGBullsEyeApp.swift */,
+				EFC153F526F52B74007C0BE7 /* ColorUISlider.swift */,
 				EFC7672626F4861C00CAF31F /* ContentView.swift */,
 				EFC7672826F4861D00CAF31F /* Assets.xcassets */,
 				EFC7672D26F4861D00CAF31F /* Info.plist */,
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFC153F626F52B74007C0BE7 /* ColorUISlider.swift in Sources */,
 				EFC7672726F4861C00CAF31F /* ContentView.swift in Sources */,
 				EFC7673526F48FD200CAF31F /* ColorSlider.swift in Sources */,
 				EFC7672526F4861C00CAF31F /* RGBullsEyeApp.swift in Sources */,
