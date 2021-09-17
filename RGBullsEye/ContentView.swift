@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct ContentView: View {
     
@@ -16,6 +17,7 @@ struct ContentView: View {
     @State var rGuess: Double = Double.random(in: 0..<1)
     @State var gGuess: Double = Double.random(in: 0..<1)
     @State var bGuess: Double = Double.random(in: 0..<1)
+    @State var showAlert = false
     
     // MARK: - Body
     var body: some View {
@@ -39,7 +41,9 @@ struct ContentView: View {
                 }
 
             }
-            Button(action: {}) {
+            Button(action: {
+                showAlert = true
+            }) {
                 Text("Hit Me!")
             }
             
@@ -49,7 +53,22 @@ struct ContentView: View {
             ColorSlider(value: $bGuess, textColor: .blue)
             // <SliderView/>
             
-        }
+        }.alert(isPresented: $showAlert, content: {
+            Alert(title: Text("Your Score"),
+                  message: Text(String(computeScore())))
+        })
+    }
+}
+
+// MARK: - Helpers
+
+extension ContentView {
+    func computeScore() -> Int {
+      let rDiff = rGuess - rTarget
+      let gDiff = gGuess - gTarget
+      let bDiff = bGuess - bTarget
+      let diff = sqrt(rDiff * rDiff + gDiff * gDiff + bDiff * bDiff)
+      return Int((1.0 - diff) * 100.0 + 0.5)
     }
 }
 
